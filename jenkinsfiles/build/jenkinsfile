@@ -4,7 +4,7 @@ pipeline {
     agent any
 
     tools {
-        git "git"
+        git "Default"
         maven "maven"
     }
 
