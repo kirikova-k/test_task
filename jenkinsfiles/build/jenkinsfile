@@ -11,10 +11,10 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://github.com/kirikova-k/gs-rest-service.git'
+                git 'https://github.com/kirikova-k/test_task.git'
 
                 // Run Maven on a Unix agent.
-                sh "mvn  -f initial/pom.xml clean install -P production"
+                sh "mvn  -f gs-rest-service/initial/pom.xml clean install -P production"
             }
 
         }
