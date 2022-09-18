@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                bash 'mvn clean install'
+                bash 'mvn clean install -P production'
             }
         }
     }
