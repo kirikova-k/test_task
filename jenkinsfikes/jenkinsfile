@@ -1,0 +1,22 @@
+#!groovy
+
+pipeline {
+    agent any
+
+    tools {
+        maven "maven"
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/kirikova-k/gs-rest-service.git'
+
+                // Run Maven on a Unix agent.
+                sh "mvn  -f gs-rest-service/initial/pom.xml clean install -P production"
+            }
+
+        }
+    }
+}
