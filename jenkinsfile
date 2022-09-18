@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                bash 'all -P production'
+                bash 'echo hello world'
             }
         }
     }
