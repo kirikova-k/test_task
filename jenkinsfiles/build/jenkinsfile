@@ -4,7 +4,6 @@ pipeline {
     agent any
 
     tools {
-        git "Default"
         maven "maven"
     }
 
@@ -15,7 +14,7 @@ pipeline {
                 git 'https://github.com/kirikova-k/gs-rest-service.git'
 
                 // Run Maven on a Unix agent.
-                sh "mvn  -f gs-rest-service/initial/pom.xml clean install -P production"
+                sh "mvn  -f initial/pom.xml clean install -P production"
             }
 
         }
