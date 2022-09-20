@@ -3,17 +3,16 @@
 pipeline {
     agent any
 
-    // tools {
-    //     maven "maven"
-    // }
+    tools {
+        maven "3.8.6"
+    }
 
     stages {
         stage('Build') {
             steps {
-                // Get some code from a GitHub repository
                 git 'https://github.com/kirikova-k/test_task.git'
 
-                // Run Maven on a Unix agent.
+                sh 'mvn --version'
                 sh "mvn  -f gs-rest-service/initial/pom.xml clean install"
             }
 
