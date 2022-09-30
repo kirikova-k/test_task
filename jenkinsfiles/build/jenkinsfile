@@ -9,15 +9,16 @@ pipeline {
 
     stages {
         stage('Build') {
-            // steps {
+            steps {
                 git 'https://github.com/kirikova-k/test_task.git'
 
                 // sh 'mvn --version'
                 sh "mvn  -f gs-rest-service/initial/pom.xml clean install"
-            // }
+            }
 
         }
     }
+
 
     // post {
     //     always {
